@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Unity3D," />
+  <meta name="keywords" content="Unity3D - UGUI," />
 
 
 
@@ -79,23 +79,23 @@
 
 
 
-<meta name="description" content="Unity3D部署导出的Webgl项目同时支持手机 Foldcc2017-8-18  Unity在抛弃掉flash后支持导出全新的H5项目WegGl，但是目前Unity3D导出的Webgl不支持在手机上使用，原因是手机上的硬件性能相对来说要弱而且很多浏览器不支持Webgl，因此在手机上玩Webgl游戏可能会对玩家不友好，但是随着手机发展，目前手机的硬件性能都大大提高，同时很多手机浏览器也开始支持W">
-<meta name="keywords" content="Unity3D">
+<meta name="description" content="说明 由于Unity自带的Scroll View控件不能灵活的满足自己实际开发，因此想到自己制作一个滑动展示页面，且该控件不依赖Unity的其他UI控件，但该控件存在局限性，仅供参考   该篇文章着重介绍原理和结构，不会过多讨论代码的编写，需要查看源码可以访问一下地址  FScrollPage源码地址    实际效果预览：   结构设计该控件滑动周期由三个部分组成 :  1 滑动时 ： 随触摸点（">
+<meta name="keywords" content="Unity3D - UGUI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于Unity3D打包Webgl项目到手机浏览器的设置">
-<meta property="og:url" content="http://yoursite.com/2017/08/18/关于Unity3D打包Webgl项目到手机浏览器的设置/index.html">
+<meta property="og:title" content="Unity自制ScrollView滑动栏 - FScrollPage">
+<meta property="og:url" content="http://yoursite.com/2018/05/06/Unity自制ScrollView滑动栏-FScrollPage/index.html">
 <meta property="og:site_name" content="Foldcc Blog">
-<meta property="og:description" content="Unity3D部署导出的Webgl项目同时支持手机 Foldcc2017-8-18  Unity在抛弃掉flash后支持导出全新的H5项目WegGl，但是目前Unity3D导出的Webgl不支持在手机上使用，原因是手机上的硬件性能相对来说要弱而且很多浏览器不支持Webgl，因此在手机上玩Webgl游戏可能会对玩家不友好，但是随着手机发展，目前手机的硬件性能都大大提高，同时很多手机浏览器也开始支持W">
+<meta property="og:description" content="说明 由于Unity自带的Scroll View控件不能灵活的满足自己实际开发，因此想到自己制作一个滑动展示页面，且该控件不依赖Unity的其他UI控件，但该控件存在局限性，仅供参考   该篇文章着重介绍原理和结构，不会过多讨论代码的编写，需要查看源码可以访问一下地址  FScrollPage源码地址    实际效果预览：   结构设计该控件滑动周期由三个部分组成 :  1 滑动时 ： 随触摸点（">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20170818111906498?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170818113137929?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170818113459168?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170818114001721?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-04-27T13:14:16.996Z">
+<meta property="og:image" content="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/FScrollPage1.gif">
+<meta property="og:image" content="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/FScrollPage2.gif">
+<meta property="og:image" content="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/FScrollPage.png">
+<meta property="og:image" content="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/FScrollPage%203.png">
+<meta property="og:updated_time" content="2018-05-06T14:14:14.058Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于Unity3D打包Webgl项目到手机浏览器的设置">
-<meta name="twitter:description" content="Unity3D部署导出的Webgl项目同时支持手机 Foldcc2017-8-18  Unity在抛弃掉flash后支持导出全新的H5项目WegGl，但是目前Unity3D导出的Webgl不支持在手机上使用，原因是手机上的硬件性能相对来说要弱而且很多浏览器不支持Webgl，因此在手机上玩Webgl游戏可能会对玩家不友好，但是随着手机发展，目前手机的硬件性能都大大提高，同时很多手机浏览器也开始支持W">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170818111906498?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="Unity自制ScrollView滑动栏 - FScrollPage">
+<meta name="twitter:description" content="说明 由于Unity自带的Scroll View控件不能灵活的满足自己实际开发，因此想到自己制作一个滑动展示页面，且该控件不依赖Unity的其他UI控件，但该控件存在局限性，仅供参考   该篇文章着重介绍原理和结构，不会过多讨论代码的编写，需要查看源码可以访问一下地址  FScrollPage源码地址    实际效果预览：   结构设计该控件滑动周期由三个部分组成 :  1 滑动时 ： 随触摸点（">
+<meta name="twitter:image" content="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/FScrollPage1.gif">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/18/关于Unity3D打包Webgl项目到手机浏览器的设置/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/06/Unity自制ScrollView滑动栏-FScrollPage/"/>
 
 
 
 
 
-  <title>关于Unity3D打包Webgl项目到手机浏览器的设置 | Foldcc Blog</title>
+  <title>Unity自制ScrollView滑动栏 - FScrollPage | Foldcc Blog</title>
   
 
 
@@ -258,7 +258,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/关于Unity3D打包Webgl项目到手机浏览器的设置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/Unity自制ScrollView滑动栏-FScrollPage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Foldcc">
@@ -275,7 +275,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于Unity3D打包Webgl项目到手机浏览器的设置</h1>
+          <h1 class="post-title" itemprop="name headline">Unity自制ScrollView滑动栏 - FScrollPage</h1>
         
 
         <div class="post-meta">
@@ -287,8 +287,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T20:58:30+08:00">
-                2017-08-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T18:43:37+08:00">
+                2018-05-06
               </time>
             
 
@@ -310,8 +310,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Unity3D杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">Unity3D杂谈</span>
+                  <a href="/categories/Unity3D技术/" itemprop="url" rel="index">
+                    <span itemprop="name">Unity3D技术</span>
                   </a>
                 </span>
 
@@ -347,29 +347,60 @@
       
 
       
-        <h1 id="Unity3D部署导出的Webgl项目同时支持手机"><a href="#Unity3D部署导出的Webgl项目同时支持手机" class="headerlink" title="Unity3D部署导出的Webgl项目同时支持手机"></a>Unity3D部署导出的Webgl项目同时支持手机</h1><blockquote>
-<p>Foldcc<br>2017-8-18</p>
+        <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
+<p>由于Unity自带的Scroll View控件不能灵活的满足自己实际开发，因此想到自己制作一个滑动展示页面，且该控件不依赖Unity的其他UI控件，但该控件存在局限性，仅供参考</p>
 </blockquote>
-<p>Unity在抛弃掉flash后支持导出全新的H5项目<strong>WegGl</strong>，但是目前Unity3D导出的Webgl不支持在手机上使用，原因是手机上的硬件性能相对来说要弱而且很多浏览器不支持Webgl，因此在手机上玩Webgl游戏可能会对玩家不友好，但是随着手机发展，目前手机的硬件性能都大大提高，同时很多手机浏览器也开始支持Webgl了，所以…接下来就是今天的正题</p>
 <blockquote>
-<p>Unity导出Webgl项目部署后如果使用手机访问会弹出烦人的警告弹框之类的！同时使用其他浏览器也可能会出现弹框。</p>
+<p>该篇文章着重介绍原理和结构，不会过多讨论代码的编写，需要查看源码可以访问一下地址</p>
+<ul>
+<li><a href="https://gitee.com/Foldcc/FScrollPage.git" target="_blank" rel="noopener">FScrollPage源码地址</a></li>
+</ul>
 </blockquote>
-<p>如下：<br><img src="http://img.blog.csdn.net/20170818111906498?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="手机打开Webgl项目出现弹窗警告"></p>
-<h3 id="这里给大家分享一个小技巧就可轻松把弹窗去掉"><a href="#这里给大家分享一个小技巧就可轻松把弹窗去掉" class="headerlink" title="这里给大家分享一个小技巧就可轻松把弹窗去掉"></a><strong>这里给大家分享一个小技巧就可轻松把弹窗去掉</strong></h3><p>很简单的办法修改导出项目中的 <strong>UnityLoader.js</strong>文件即可</p>
-<h3 id="第一步-导出Webgl项目"><a href="#第一步-导出Webgl项目" class="headerlink" title="第一步 导出Webgl项目"></a>第一步 导出Webgl项目</h3><blockquote>
-<p>这里就不讲如何导出了</p>
+<blockquote>
+<p>实际效果预览：<br><img src="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/FScrollPage1.gif" alt="横向滑动展示栏"></p>
+<p><img src="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/FScrollPage2.gif" alt="纵向滑动展示栏"></p>
 </blockquote>
-<h3 id="第二部-修改js文件（划重点）"><a href="#第二部-修改js文件（划重点）" class="headerlink" title="第二部 修改js文件（划重点）"></a>第二部 修改js文件（划重点）</h3><ul>
-<li>找到项目中的<strong>UnityLoader.js</strong> 文件，并打开进行编辑</li>
-<li><p>这里我是用HBuilder工具导入该项目后打开，这样可以修改后直接预览项目（如果直接点Index.html是打不开项目的，必须要部署），如果发现代码是一坨，直接全选然后右键 整理代码就好了</p>
+<h2 id="结构设计"><a href="#结构设计" class="headerlink" title="结构设计"></a>结构设计</h2><p>该控件滑动周期由三个部分组成 :</p>
+<ul>
+<li>1 <strong>滑动时</strong> ： 随触摸点（或鼠标）滑动 </li>
+<li>2 <strong>退出滑动时</strong> ： 滑动衰减 </li>
+<li><p>3 <strong>滑动结束时</strong> ： 位置校正 </p>
+<p>滑动展示栏由一个控制器和多个滑块组成，使用时需要设置控制器的参数配置，内部的滑动item需要有FScrollItem组件或者继承自FScrollItem的组件，其中FScrollItem开放了点击和被选中事件，可以在两个接口中写自定义逻辑。</p>
 </li>
-<li><p>整理代码后就直接可以看到罪魁祸首 如图：<br><img src="http://img.blog.csdn.net/20170818113137929?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<li><p>滑动控制器 – FScrollPage<br>  <img src="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/FScrollPage.png" alt="FScrollPage"></p>
 </li>
-<li><p>一个多级嵌套的三目运算 ，我们只需要吧判断手机的给删除掉就OK了，如下，吧绿色部分delete掉<br><img src="http://img.blog.csdn.net/20170818113459168?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<li>滑动对象 – FScrollItem<br>  <img src="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/FScrollPage%203.png" alt="FScrollItem"></li>
+</ul>
+<h2 id="FScrollPage"><a href="#FScrollPage" class="headerlink" title="FScrollPage"></a>FScrollPage</h2><p>滑动控制器FScrollPage 负责整理FScrollitem的位置和大小，用户触摸交互，监听滑动事件，执行滑动特效以及传递选中事件给子物体FScrollitem。<br>考虑到易用性，在FScrollPage的初始化分为两种，第一种是自动检查指定节点下的子对象进行标记id和排序整理m默认选中第一个被标记的item，第二种方式是传递一个map<itemid ,="" item=""> 以及默认选中id。</itemid></p>
+<h2 id="FScrollItem"><a href="#FScrollItem" class="headerlink" title="FScrollItem"></a>FScrollItem</h2><p>滑动对象FScrollItem 提供了<strong>点击</strong>、<strong>被选中</strong>回调事件，当被点击时自动将该Item滑动到中心并向FScrollPage通知并选中到该Item。</p>
+<h2 id="位置整理"><a href="#位置整理" class="headerlink" title="位置整理"></a>位置整理</h2><ul>
+<li>统一锚点布局方式。</li>
+<li><p>按指定配置设置item的位置、大小、间距。</p>
+<p>将获取到的子对象map&lt;itemID，item&gt;进行遍历，生成对应的FScroillObject对象并设置统一的布局方式（居中）,初始化lastPostion和Postion <strong>(FScrollObject除了有RectTransfrom属性外还有一个Postion属性和lastPostion属性，分别用来纪录当前（或正在前往）的位置和上一次位置信息)</strong>。用于后续的滑动和位置校正。</p>
 </li>
 </ul>
-<p>这样下来手机上就可以完美运行了！！<br><img src="http://img.blog.csdn.net/20170818114001721?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>另外还有一个是判断浏览器的 ，如果不想要不必要的麻烦 直接简单一点 吧 == -1 随便改成一个永远为false的就可以了（比如  &lt; -1 就永远不会触发），或者删除也行 ，这里推荐把这判断是否支持webgl留着 。<br>希望对大家有用！</p>
+<h2 id="滑动监听"><a href="#滑动监听" class="headerlink" title="滑动监听"></a>滑动监听</h2><p>滑动监听原理时通过检测有触摸或按下事件到滑动条上时激活滑动检测，当移动速度大于阈值时则判定当前正在滑动中，当检测到手指或鼠标离开滑动条时结束滑动监听。<br>这里有一点需要注意，如果触摸滑动条触摸到了item这会被拦截点击事件，滑动条的OnPointerDown事件不会被触发，解决办法我开始参考的是一篇渗透UI点击事件文章 : <a href="http://www.xuanyusong.com/archives/4241" target="_blank" rel="noopener">渗透UI点击事件</a> ，但是使用后发现多个UI重叠时会出现栈内存溢出，导致编辑器卡死，后来想了一个更简单的办法，在FScrollItem中同样实现点击事件接口，当被按下或抬起时直接将事件继续传递给控制器的对应事件。</p>
+<pre><code>public void OnPointerDown(PointerEventData eventData)
+{
+    //传递事件
+    scrollPage.OnPointerDown(eventData);
+    //后续逻辑
+    lastPointer = eventData.position;
+}
+</code></pre><h2 id="滑动效果以及位置校正"><a href="#滑动效果以及位置校正" class="headerlink" title="滑动效果以及位置校正"></a>滑动效果以及位置校正</h2><p>滑动时根据滑动速度来控制item的移动，滑动结束后使用速度线性递减，当速度低于一定阈值时执行位置校正，其中弹动的效果使用的时一个缓动函数BackEaseOut。</p>
+<pre><code>static float BackEaseOut(float t, float b = 0, float c = 1, float d = 1)
+{
+    return c * ((t = t / d - 1) * t * ((1.70158f + 1) * t + 1.70158f) + 1) + b;
+}
+</code></pre><p>位置校正时先查询距离中心点最近的item，记录并传递该item的ID到滑动方法中，然后通过滑动方法使Item移动到正常位置。</p>
+<h2 id="源码已知存在的缺陷"><a href="#源码已知存在的缺陷" class="headerlink" title="源码已知存在的缺陷"></a>源码已知存在的缺陷</h2><p>如果你需要使用源码你需要了解以下的缺陷，你可以对缺陷进行修改或者修复</p>
+<ul>
+<li>滑动到边界时没有约束</li>
+<li>锚点固定为居中，可能会与你的项目有冲突，也可能导致自适应UI出现问题</li>
+<li>点击判定过于僵硬（按下坐标和抬起坐标的Distance小于指定阈值则触发点击）</li>
+<li>滑动衰弱的时间和位置校正时间是固定的</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>如果你有疑问，请到我的<a href="https://gitee.com/Foldcc/FScrollPage.git" target="_blank" rel="noopener">源码地址</a>下留言评论，该控件主要是技术上的研究，目前不够完善，建议根据项目需要修改源码。</p>
 
       
     </div>
@@ -387,7 +418,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Unity3D/" rel="tag"># Unity3D</a>
+            <a href="/tags/Unity3D-UGUI/" rel="tag"># Unity3D - UGUI</a>
           
         </div>
       
@@ -400,14 +431,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/08/18/关于Unity3D打包Webgl项目到手机浏览器的设置/" rel="next" title="关于Unity3D打包Webgl项目到手机浏览器的设置">
+                <i class="fa fa-chevron-left"></i> 关于Unity3D打包Webgl项目到手机浏览器的设置
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/06/Unity自制ScrollView滑动栏-FScrollPage/" rel="prev" title="Unity自制ScrollView滑动栏 - FScrollPage">
-                Unity自制ScrollView滑动栏 - FScrollPage <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/06/Unity3D-灵活创建-Asset配置文件/" rel="prev" title="Unity3D 灵活创建.Asset配置文件">
+                Unity3D 灵活创建.Asset配置文件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -574,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity3D部署导出的Webgl项目同时支持手机"><span class="nav-number">1.</span> <span class="nav-text">Unity3D部署导出的Webgl项目同时支持手机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#这里给大家分享一个小技巧就可轻松把弹窗去掉"><span class="nav-number">1.0.1.</span> <span class="nav-text">这里给大家分享一个小技巧就可轻松把弹窗去掉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步-导出Webgl项目"><span class="nav-number">1.0.2.</span> <span class="nav-text">第一步 导出Webgl项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二部-修改js文件（划重点）"><span class="nav-number">1.0.3.</span> <span class="nav-text">第二部 修改js文件（划重点）</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构设计"><span class="nav-number">2.</span> <span class="nav-text">结构设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FScrollPage"><span class="nav-number">3.</span> <span class="nav-text">FScrollPage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FScrollItem"><span class="nav-number">4.</span> <span class="nav-text">FScrollItem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位置整理"><span class="nav-number">5.</span> <span class="nav-text">位置整理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滑动监听"><span class="nav-number">6.</span> <span class="nav-text">滑动监听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滑动效果以及位置校正"><span class="nav-number">7.</span> <span class="nav-text">滑动效果以及位置校正</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码已知存在的缺陷"><span class="nav-number">8.</span> <span class="nav-text">源码已知存在的缺陷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">9.</span> <span class="nav-text">其他</span></a></li></ol></div>
             
 
           </div>

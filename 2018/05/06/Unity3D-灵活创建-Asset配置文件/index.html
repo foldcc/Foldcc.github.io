@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Unity3D," />
+  <meta name="keywords" content="Unity3D,资源配置," />
 
 
 
@@ -79,23 +79,22 @@
 
 
 
-<meta name="description" content="Unity3D部署导出的Webgl项目同时支持手机 Foldcc2017-8-18  Unity在抛弃掉flash后支持导出全新的H5项目WegGl，但是目前Unity3D导出的Webgl不支持在手机上使用，原因是手机上的硬件性能相对来说要弱而且很多浏览器不支持Webgl，因此在手机上玩Webgl游戏可能会对玩家不友好，但是随着手机发展，目前手机的硬件性能都大大提高，同时很多手机浏览器也开始支持W">
-<meta name="keywords" content="Unity3D">
+<meta name="description" content="简介在游戏开发中,我们经常要对一些数据预先配置,比如不同角色的属性,武器的各项数值等等,一般可通过XML配置. 此外还可以用Unity自带的.Asset资源配置文件配置数据,下面介绍一下如何灵活快速的创建.Asset文件并使用.  转载请注明出处  相比XML配置文件, Asset文件更加直观而且支持直接配置如 GameObject、Sprite、AudioClip等更加高级的对象,基本上除了接口">
+<meta name="keywords" content="Unity3D,资源配置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于Unity3D打包Webgl项目到手机浏览器的设置">
-<meta property="og:url" content="http://yoursite.com/2017/08/18/关于Unity3D打包Webgl项目到手机浏览器的设置/index.html">
+<meta property="og:title" content="Unity3D 灵活创建.Asset配置文件">
+<meta property="og:url" content="http://yoursite.com/2018/05/06/Unity3D-灵活创建-Asset配置文件/index.html">
 <meta property="og:site_name" content="Foldcc Blog">
-<meta property="og:description" content="Unity3D部署导出的Webgl项目同时支持手机 Foldcc2017-8-18  Unity在抛弃掉flash后支持导出全新的H5项目WegGl，但是目前Unity3D导出的Webgl不支持在手机上使用，原因是手机上的硬件性能相对来说要弱而且很多浏览器不支持Webgl，因此在手机上玩Webgl游戏可能会对玩家不友好，但是随着手机发展，目前手机的硬件性能都大大提高，同时很多手机浏览器也开始支持W">
+<meta property="og:description" content="简介在游戏开发中,我们经常要对一些数据预先配置,比如不同角色的属性,武器的各项数值等等,一般可通过XML配置. 此外还可以用Unity自带的.Asset资源配置文件配置数据,下面介绍一下如何灵活快速的创建.Asset文件并使用.  转载请注明出处  相比XML配置文件, Asset文件更加直观而且支持直接配置如 GameObject、Sprite、AudioClip等更加高级的对象,基本上除了接口">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20170818111906498?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170818113137929?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170818113459168?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170818114001721?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-04-27T13:14:16.996Z">
+<meta property="og:image" content="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/UConfig%E9%85%8D%E7%BD%AE/Config%E9%85%8D%E7%BD%AE.gif">
+<meta property="og:image" content="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/UConfig%E9%85%8D%E7%BD%AE/UConfig3.png">
+<meta property="og:image" content="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/UConfig%E9%85%8D%E7%BD%AE/%E8%AE%BE%E7%BD%AE%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.gif">
+<meta property="og:updated_time" content="2018-05-06T14:13:21.435Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于Unity3D打包Webgl项目到手机浏览器的设置">
-<meta name="twitter:description" content="Unity3D部署导出的Webgl项目同时支持手机 Foldcc2017-8-18  Unity在抛弃掉flash后支持导出全新的H5项目WegGl，但是目前Unity3D导出的Webgl不支持在手机上使用，原因是手机上的硬件性能相对来说要弱而且很多浏览器不支持Webgl，因此在手机上玩Webgl游戏可能会对玩家不友好，但是随着手机发展，目前手机的硬件性能都大大提高，同时很多手机浏览器也开始支持W">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170818111906498?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="Unity3D 灵活创建.Asset配置文件">
+<meta name="twitter:description" content="简介在游戏开发中,我们经常要对一些数据预先配置,比如不同角色的属性,武器的各项数值等等,一般可通过XML配置. 此外还可以用Unity自带的.Asset资源配置文件配置数据,下面介绍一下如何灵活快速的创建.Asset文件并使用.  转载请注明出处  相比XML配置文件, Asset文件更加直观而且支持直接配置如 GameObject、Sprite、AudioClip等更加高级的对象,基本上除了接口">
+<meta name="twitter:image" content="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/UConfig%E9%85%8D%E7%BD%AE/Config%E9%85%8D%E7%BD%AE.gif">
 
 
 
@@ -125,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/18/关于Unity3D打包Webgl项目到手机浏览器的设置/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/06/Unity3D-灵活创建-Asset配置文件/"/>
 
 
 
 
 
-  <title>关于Unity3D打包Webgl项目到手机浏览器的设置 | Foldcc Blog</title>
+  <title>Unity3D 灵活创建.Asset配置文件 | Foldcc Blog</title>
   
 
 
@@ -258,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/关于Unity3D打包Webgl项目到手机浏览器的设置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/Unity3D-灵活创建-Asset配置文件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Foldcc">
@@ -275,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于Unity3D打包Webgl项目到手机浏览器的设置</h1>
+          <h1 class="post-title" itemprop="name headline">Unity3D 灵活创建.Asset配置文件</h1>
         
 
         <div class="post-meta">
@@ -287,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T20:58:30+08:00">
-                2017-08-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T21:57:44+08:00">
+                2018-05-06
               </time>
             
 
@@ -310,8 +309,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Unity3D杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">Unity3D杂谈</span>
+                  <a href="/categories/Unity3D技术/" itemprop="url" rel="index">
+                    <span itemprop="name">Unity3D技术</span>
                   </a>
                 </span>
 
@@ -347,29 +346,31 @@
       
 
       
-        <h1 id="Unity3D部署导出的Webgl项目同时支持手机"><a href="#Unity3D部署导出的Webgl项目同时支持手机" class="headerlink" title="Unity3D部署导出的Webgl项目同时支持手机"></a>Unity3D部署导出的Webgl项目同时支持手机</h1><blockquote>
-<p>Foldcc<br>2017-8-18</p>
-</blockquote>
-<p>Unity在抛弃掉flash后支持导出全新的H5项目<strong>WegGl</strong>，但是目前Unity3D导出的Webgl不支持在手机上使用，原因是手机上的硬件性能相对来说要弱而且很多浏览器不支持Webgl，因此在手机上玩Webgl游戏可能会对玩家不友好，但是随着手机发展，目前手机的硬件性能都大大提高，同时很多手机浏览器也开始支持Webgl了，所以…接下来就是今天的正题</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在游戏开发中,我们经常要对一些数据预先配置,比如不同角色的属性,武器的各项数值等等,一般可通过XML配置. 此外还可以用Unity自带的.Asset资源配置文件配置数据,下面介绍一下如何灵活快速的创建.Asset文件并使用.</p>
 <blockquote>
-<p>Unity导出Webgl项目部署后如果使用手机访问会弹出烦人的警告弹框之类的！同时使用其他浏览器也可能会出现弹框。</p>
+<p>转载请注明出处</p>
 </blockquote>
-<p>如下：<br><img src="http://img.blog.csdn.net/20170818111906498?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="手机打开Webgl项目出现弹窗警告"></p>
-<h3 id="这里给大家分享一个小技巧就可轻松把弹窗去掉"><a href="#这里给大家分享一个小技巧就可轻松把弹窗去掉" class="headerlink" title="这里给大家分享一个小技巧就可轻松把弹窗去掉"></a><strong>这里给大家分享一个小技巧就可轻松把弹窗去掉</strong></h3><p>很简单的办法修改导出项目中的 <strong>UnityLoader.js</strong>文件即可</p>
-<h3 id="第一步-导出Webgl项目"><a href="#第一步-导出Webgl项目" class="headerlink" title="第一步 导出Webgl项目"></a>第一步 导出Webgl项目</h3><blockquote>
-<p>这里就不讲如何导出了</p>
-</blockquote>
-<h3 id="第二部-修改js文件（划重点）"><a href="#第二部-修改js文件（划重点）" class="headerlink" title="第二部 修改js文件（划重点）"></a>第二部 修改js文件（划重点）</h3><ul>
-<li>找到项目中的<strong>UnityLoader.js</strong> 文件，并打开进行编辑</li>
-<li><p>这里我是用HBuilder工具导入该项目后打开，这样可以修改后直接预览项目（如果直接点Index.html是打不开项目的，必须要部署），如果发现代码是一坨，直接全选然后右键 整理代码就好了</p>
-</li>
-<li><p>整理代码后就直接可以看到罪魁祸首 如图：<br><img src="http://img.blog.csdn.net/20170818113137929?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-</li>
-<li><p>一个多级嵌套的三目运算 ，我们只需要吧判断手机的给删除掉就OK了，如下，吧绿色部分delete掉<br><img src="http://img.blog.csdn.net/20170818113459168?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-</li>
+<p>相比XML配置文件, Asset文件更加直观而且支持直接配置如 GameObject、Sprite、AudioClip等更加高级的对象,基本上除了接口、事件 都可以通过Asset文件配置 , 所以说灵活性上比XML要更强一点.</p>
+<h2 id="插件演示"><a href="#插件演示" class="headerlink" title="插件演示"></a>插件演示</h2><ul>
+<li>首先创建一个继承于ScriptableObject 类的对象</li>
 </ul>
-<p>这样下来手机上就可以完美运行了！！<br><img src="http://img.blog.csdn.net/20170818114001721?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTY3NjMyNDk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>另外还有一个是判断浏览器的 ，如果不想要不必要的麻烦 直接简单一点 吧 == -1 随便改成一个永远为false的就可以了（比如  &lt; -1 就永远不会触发），或者删除也行 ，这里推荐把这判断是否支持webgl留着 。<br>希望对大家有用！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[System.Serializable]</span><br><span class="line">public class DemoConfig : ScriptableObject &#123;</span><br><span class="line"></span><br><span class="line">    public string userName;</span><br><span class="line"></span><br><span class="line">    public int userID;</span><br><span class="line"></span><br><span class="line">    public GameObject userObject;</span><br><span class="line"></span><br><span class="line">    public Sprite sprite;</span><br><span class="line"></span><br><span class="line">    public AudioClip audioClip;</span><br><span class="line"></span><br><span class="line">    public void print() &#123;</span><br><span class="line">        Debug.Log(string.Format(&quot;name: &#123;0&#125; id: &#123;1&#125;&quot; , userName , userID));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用UConfig创建对应的Asset文件</li>
+</ul>
+<p><img src="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/UConfig%E9%85%8D%E7%BD%AE/Config%E9%85%8D%E7%BD%AE.gif" alt="创建Asset配置文件"></p>
+<p><img src="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/UConfig%E9%85%8D%E7%BD%AE/UConfig3.png" alt="创建成功"></p>
+<ul>
+<li>配置各项属性<br><img src="https://fold.oss-cn-shanghai.aliyuncs.com/BlogImg/UConfig%E9%85%8D%E7%BD%AE/%E8%AE%BE%E7%BD%AE%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.gif" alt="这里写图片描述"></li>
+</ul>
+<h2 id="创建Asset文件"><a href="#创建Asset文件" class="headerlink" title="创建Asset文件"></a>创建Asset文件</h2><p>创建Asset文件的核心代码只有一句, 那就是通过ScriptableObject.CreateInstance()方法, 这个方法允许传入一个类名并创建对应的资源配置文件,以下代码如下.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">static void CreateAsset()</span><br><span class="line">        &#123;</span><br><span class="line">	        //class_Name表示类名 , config_Name表示要创建的配置文件名称 , file_floder表示创建路径</span><br><span class="line">            if (class_Name.Length == 0 || config_Name.Length == 0 || file_floder.Length == 0)</span><br><span class="line">            &#123;</span><br><span class="line">                Debug.LogError(string.Format(&quot;[UConfig]: 创建失败 , 信息不完整!&quot;));</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            ScriptableObject config = ScriptableObject.CreateInstance(class_Name);</span><br><span class="line"></span><br><span class="line">            if (config == null)</span><br><span class="line">            &#123;</span><br><span class="line">                Debug.LogError(string.Format(&quot;[UConfig]: 创建失败 , 类名无法识别! --&gt; &#123;0&#125;&quot;, class_Name));</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            // 自定义资源保存路径</span><br><span class="line">            string path = file_floder;</span><br><span class="line">            //如果项目总不包含该路径，创建一个</span><br><span class="line">            if (!Directory.Exists(path))</span><br><span class="line">            &#123;</span><br><span class="line">                Directory.CreateDirectory(path);</span><br><span class="line">            &#125;</span><br><span class="line">            config_Name = config_Name.Replace(&quot;.asset&quot;, &quot;&quot;);</span><br><span class="line">            path = string.Format(&quot;&#123;0&#125;/&#123;1&#125;.asset&quot;, file_floder, config_Name);</span><br><span class="line">            string defFilePath = &quot;Assets/&quot; + config_Name + &quot;.asset&quot;;</span><br><span class="line">            // 生成自定义资源到指定路径</span><br><span class="line">            AssetDatabase.CreateAsset(config, defFilePath);</span><br><span class="line">            File.Move(Application.dataPath + string.Format(&quot;/&#123;0&#125;.asset&quot; , config_Name), path);</span><br><span class="line">            AssetDatabase.Refresh();</span><br><span class="line">            Debug.Log(string.Format(&quot;&lt;color=yellow&gt;[UConfig]: 创建成功 ! --&gt; &#123;0&#125;&lt;/color&gt;&quot;, path));</span><br><span class="line">            configWindow.Close();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="读取配置好的Asset文件"><a href="#读取配置好的Asset文件" class="headerlink" title="读取配置好的Asset文件"></a>读取配置好的Asset文件</h2><p>通过以上方式创建的配置文件可以作为一个与Prefab资源对待, 并且可以随其他prefab资源一样被打成AssetBundle包动态加载 , 理所当然的可以实现所谓的热更配置表.</p>
+<p>加载的代码就用 Resources.Load(“fileName”); 就可以了,也可以预先挂着到某一个代码的属性中,然后直接通过as强转.</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>有需要的伙伴可以访问我的码云下载源码,有更详细的代码,供大家参考</p>
+<hr>
+<p><a href="https://gitee.com/Foldcc/UConfig" target="_blank" rel="noopener">点击前往源码</a></p>
+<p> (顺便Stars一下吧 ^_^)</p>
 
       
     </div>
@@ -389,6 +390,8 @@
           
             <a href="/tags/Unity3D/" rel="tag"># Unity3D</a>
           
+            <a href="/tags/资源配置/" rel="tag"># 资源配置</a>
+          
         </div>
       
 
@@ -400,15 +403,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/05/06/Unity自制ScrollView滑动栏-FScrollPage/" rel="next" title="Unity自制ScrollView滑动栏 - FScrollPage">
+                <i class="fa fa-chevron-left"></i> Unity自制ScrollView滑动栏 - FScrollPage
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/06/Unity自制ScrollView滑动栏-FScrollPage/" rel="prev" title="Unity自制ScrollView滑动栏 - FScrollPage">
-                Unity自制ScrollView滑动栏 - FScrollPage <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -574,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity3D部署导出的Webgl项目同时支持手机"><span class="nav-number">1.</span> <span class="nav-text">Unity3D部署导出的Webgl项目同时支持手机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#这里给大家分享一个小技巧就可轻松把弹窗去掉"><span class="nav-number">1.0.1.</span> <span class="nav-text">这里给大家分享一个小技巧就可轻松把弹窗去掉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步-导出Webgl项目"><span class="nav-number">1.0.2.</span> <span class="nav-text">第一步 导出Webgl项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二部-修改js文件（划重点）"><span class="nav-number">1.0.3.</span> <span class="nav-text">第二部 修改js文件（划重点）</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件演示"><span class="nav-number">2.</span> <span class="nav-text">插件演示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建Asset文件"><span class="nav-number">3.</span> <span class="nav-text">创建Asset文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读取配置好的Asset文件"><span class="nav-number">4.</span> <span class="nav-text">读取配置好的Asset文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li></ol></div>
             
 
           </div>
